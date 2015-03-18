@@ -1,27 +1,24 @@
-# Welcome to the *Zend Framework 2* documentation
+# Bem vindo a documentação do Zend Framework 2 em Portugûes
 
-## RELEASE INFORMATION
+Essa documentação é baseada na documentação original em ingçês disponível em:
+https://github.com/zendframework/zf2-documentation
 
-This documentation is based on *Zend Framework 2* (master branch)
 
+## Veja a Documentação Online
 
-## VIEW THE DOCUMENTATION ONLINE
+Nos usamos o [readthedocs.org](http://readthedocs.org/) para renderizar online
+a versão de desenvolvimento da tradução da documentação do Zend Framework 2.
 
-We used the [readthedocs.org](http://readthedocs.org/) project to render online the development version of the
-documentation of Zend Framework 2.
+Você pode ler a dicumentação em  
+[http://zf2-documentation-br.readthedocs.org](http://zf2-documentation-br.readthedocs.org/pt/latest/).
 
-You can read the development online documentation in 
-[http://zf2.readthedocs.org](http://zf2.readthedocs.org/en/latest/index.html).
+## Informações de Compilação
 
-You can read the last stable documentation in 
-[http://packages.zendframework.com/docs/latest/manual/en/](http://packages.zendframework.com/docs/latest/manual/en/).
+Para compilar a documentação é necessário ter o [Sphinx](http://sphinx-doc.org/). 
+Tambem são necessárias as bibliotecas _Pygments_, _docutils_ and _markupsafe_, 
+que podem ser instaladas com `pip install`.
 
-## BUILDING DOCUMENTATION
-
-Building the documentation requires [Sphinx](http://sphinx-doc.org/). Further requirements are _Pygments_, _docutils_ and _markupsafe_, installable with `pip install`.
-
-Descend into the `docs/` directory, and run `make` with one of the following
-targets:
+Acesse o diretório `docs/`, e execute `make` com um dos seguintes parametros:
 
 - `epub` - build epub (ebook) documentation (requires
   [Calibre](http://calibre-ebook.com/) to build cross-platform epub versions)
@@ -32,29 +29,33 @@ targets:
 - `man` - build Unix manpages
 - `text` - build ANSI text manual files
 
-Examples:
+Exemplo:
 
 ```sh
 make html
 ```
 
-You can cleanup by running `make clean`.
+Nota: No momento somente a versão em HTML é suportada, porem existem planos para
+suportar outros formatos
 
-## CONTRIBUTING
+Você pode realizar a limpeza com `make clean`.
 
-If you wish to contribute to the documentation of Zend Framework 2, please read the
-CONTRIBUTING.md file.
+## Contribuindo
 
-If you don't know where to begin, or where you can best help, please review the
-TODO.md file.
+Caso queira contribuir com a tradução da documentação do Zend Framework 2 por favor
+leia o arquivo CONTRIBUTING.md.
 
-## LICENSE
+Se você não sabe por onde começar, ou onde sua ajuda será melhor aproveitada, por
+favor leia o arquivo TODO.md.
 
-The files in this archive are released under the Zend Framework license.
-You can find a copy of this license in LICENSE.txt.
+## Licensa
 
-## ACKNOWLEDGEMENTS
+Os arquivos nesse repostório estão licenciados sobre a "Zend Framework License".
+Uma cópia dessa licença pode ser encontrada em LICENSE.txt.
 
-The Zend Framework team would like to thank all the [contributors](https://github.com/zendframework/zf2-documentation/contributors) to the Zend
-Framework Documentation project, our corporate sponsor, and you, the Zend Framework user.
-Please visit us sometime soon at http://framework.zend.com.
+## Agradecimentos
+
+O Time do Zend Framework e o time de Tradução agradece a todos os
+[contribuidores](https://github.com/zendframework/zf2-documentation/contributors) 
+da documentação do Zend Framework e de sua tradução, aos patrocinadores e a você,
+usuário do Zend Framework. por favor visite-nos em http://framework.zend.com.
