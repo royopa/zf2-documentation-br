@@ -1,62 +1,64 @@
 .. _introduction.overview:
 
-********
-Overview
-********
+***********
+Visão Geral
+***********
 
-Zend Framework 2 is an open source framework for developing web applications and services using *PHP* 5.3+. Zend 
-Framework 2 uses 100% `object-oriented`_ code and utilises most of the new features of PHP 5.3, namely 
-`namespaces`_, `late static binding`_, `lambda functions and closures`_.
+O Zend Framework 2 é um framework de código aberto para desenvolvimento de aplicações web e serviços usando
+*PHP* 5.3+. o Zend Framework 2 usa código 100% `orientado a objetos`_ e a maioria das novas funcionalidades
+do PHP 5.3, incluindo `namespaces`_, `late static binding`_, `funções lambda e closures`_.
 
-Zend Framework 2 evolved from Zend Framework 1, a successful PHP framework with over 15 million 
-downloads. 
+O Zend Framework 2 é a evolução do Zend Framework 1, um framework PHP de sucesso com mais de 15 milhões de
+downloads.
 
 .. note::
 
-    *ZF2* is not backward compatible with *ZF1*, because of the new features in PHP 5.3+ implemented by 
-    the framework, and due to major rewrites of many components.
+    *ZF2* não possui retrocompatibilidade com o *ZF1*, por causa das novas funcionalidades do PHP 5.3+ implementadas
+    pelo frameworks, e devido a grandes mudanças em muitos componentes.
 
-The component structure of Zend Framework 2 is unique; each component is designed with few
-dependencies on other components. ZF2 follows the `SOLID`_ object-oriented design principle. This loosely coupled 
-architecture allows developers to use whichever components they want. We call this a "use-at-will" design. 
-We support `Pyrus`_ and `Composer`_ as installation  and dependency tracking mechanisms for the framework as a whole and 
-for each component, further enhancing this design.
+A estrutura de componentes do Zend Framework 2 é única ; cada componente e planejado com poucas
+dependencias de outros componentes. ZF2 segue os principios de arquitetura orientada a objetos `SOLID`_. Essa
+arquitetura com baixo acoplamento permite que desenvolvedores usem quaisquer componentes que quiserem. Nos chamamos
+isso de arquitetura "use-at-will". Nos suportamos `Pyrus`_ e `Composer`_ como mecanismos de instalação e gerenciamento
+de dependencias para o fraemwork como um todo e para cada componente, melhorando ainda mais essa abordagem.
 
-We use `PHPUnit`_ to test our code and `Travis CI`_ as a Continuous Integration service.
+s Nos usamos `PHPUnit`_ para testar nosso código e `Travis CI`_ como um serviço de Integração Continua.
 
-While they can be used separately, Zend Framework 2 components in the standard library form a powerful and extensible
-web application framework when combined. Also, it offers a robust, high performance `MVC`_ implementation, a
-database abstraction that is simple to use, and a forms component that implements `HTML5 form rendering`_,
-validation, and filtering so that developers can consolidate all of these operations using one easy-to-use, object
-oriented interface. Other components, such as :doc:`Zend\\Authentication <zend.authentication.introduction>` and
-:doc:`Zend\\Permissions\\Acl <zend.permissions.acl.introduction>`, provide user authentication and authorization against
-all common credential stores. 
+Apesar de poderem ser usados separadamente, os componentes do Zend Framework 2 na sua apresentação padrão formam um
+poderoso e extensível framework de aplicações web quando combinados. Além disso, ele oferece uma implementação robusta
+e de alta performance do modelo `MVC`_, uma abstração de banco de dados qu é simples de usar e um componente de
+formulario que implementa a `Renderização de formulários em HTML5`_, validação, e filtros para que os desenvolvedores
+possam consolidar todas essas operações em uma interface facil de usar e orientada a objetos. outros componentes como
+:doc:`Zend\\Authentication <zend.authentication.introduction>` e
+:doc:`Zend\\Permissions\\Acl <zend.permissions.acl.introduction>`, fornecem autenticação e autorização de usuários
+nos cenários mais comuns de armazenamento de credenciais.
 
-Still others, with the ``ZendService`` namespace, implement client libraries to simply access the most
-popular web services available. Whatever your application needs are, you're likely to find a Zend Framework 2
-component that can be used to dramatically reduce development time with a thoroughly tested foundation.
+Outros componentes ainda, com o namespace ``ZendService``, implementam bibliotecas clientes para simplificar acesso
+aos mais poulares serviços web disponíveis. Sejam quais forem as necessidades de sua aplicação, você provavalmente irá
+encontrar um componente do Zend Framework 2 que pode ser usado para resuzir drasticamente o tempo de desenvolvimento com
+uma base fortemente testada.
  
-The principal sponsor of the project 'Zend Framework 2' is `Zend Technologies`_, but many companies have contributed 
-components or significant features to the framework. Companies such as Google, Microsoft, and StrikeIron have 
-partnered with Zend to provide interfaces to web services and other technologies they wish to make available 
-to Zend Framework 2 developers.
+O principal patrocinador do projeto 'Zend Framework 2' é a `Zend Technologies`_, ma smuitas outras empresas tem contribuido
+com componentes ou funcionalidades significativas para o framework. Empresas como Google, Microsoft e StrikeIron tem sido
+parceiras da Zend para fornecer interfaces para os serviços web e outras tecnologias que eles querem que estejam
+disponíveis para desenvolvedores Zend Framework 2.
 
-Zend Framework 2 could not deliver and support all of these features without the help of the vibrant Zend Framework 2
-community. Community members, including contributors, make themselves available on `mailing lists`_, 
-`IRC channels`_ and other forums. Whatever question you have about Zend Framework 2, the community is always 
-available to address it.
+O Zend Framework 2 não poderia entregar e atender todas essas funcionalidades sem a ajuda da vibrante comunidade
+do Zend Framework 2. membros da comunidade, incluindo contribuidores, se colocam a disposição nas `listas de e-mails`_,
+`canais do IRC`_ e outros forums. Qualquer que seja a dúvida que você tenha sobre o Zend Framework 2, a comunidade
+estará sempre disposta a resolver.
 
-.. _`object-oriented`: http://en.wikipedia.org/wiki/Object-oriented_programming
+.. _`orientado a objetos`: http://en.wikipedia.org/wiki/Object-oriented_programming
 .. _`namespaces`: http://php.net/manual/en/language.namespaces.php
 .. _`late static binding`: http://php.net/lsb
-.. _`lambda functions and closures`: http://php.net/manual/en/functions.anonymous.php
+.. _`funções lambda e closures`: http://php.net/manual/en/functions.anonymous.php
 .. _`SOLID`: http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
 .. _`Pyrus`: http://pear.php.net/manual/en/pyrus.php
 .. _`Composer`: http://getcomposer.org/
 .. _`PHPUnit`: http://www.phpunit.de
 .. _`Travis CI`: http://travis-ci.org/
 .. _`MVC`: http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller#PHP
-.. _`HTML5 form rendering`: http://www.w3.org/TR/html5/forms.html#forms
+.. _`Renderização de formulários em HTML5`: http://www.w3.org/TR/html5/forms.html#forms
 .. _`Zend Technologies`: http://www.zend.com
-.. _`mailing lists`: http://framework.zend.com/archives
-.. _`IRC channels`: http://www.zftalk.com
+.. _`listas de e-mails`: http://framework.zend.com/archives
+.. _`canais do IRC`: http://www.zftalk.com
