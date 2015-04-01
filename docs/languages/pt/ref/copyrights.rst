@@ -1,12 +1,12 @@
 .. _copyrights:
 
-*********************
-Copyright Information
-*********************
+***********************************
+Informações sobre Direitos Autorais
+***********************************
 
-The following copyrights are applicable to portions of Zend Framework.
+Os seguintes direitos autorais são aplicáveis a parcelas do Zend Framework.
 
-Copyright © 2005-2014 Zend Technologies Inc. (http://www.zend.com)
+Copyright © 2005-2015 Zend Technologies Inc. (http://www.zend.com)
 
 
 
