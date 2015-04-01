@@ -1,17 +1,16 @@
 .. _introduction.installation:
 
-************
-Installation
-************
+**********
+Instalação
+**********
 
 .. _installation.composer:
 
-Using Composer
-----------------------------
+Usando Composer
+---------------
 
-The recommended way to start a new Zend Framework project is to clone the skeleton
-application and use ``composer`` to install dependencies using the ``create-project``
-command:
+A forma recomendada de iniciar um novo projeto com Zend Framework é clonar a aplição
+esqueleto e usar o ``composer`` para instalar as dependencias usando o comando ``create-project``:
 
 .. code-block:: text
    :linenos:
@@ -19,8 +18,8 @@ command:
    curl -s https://getcomposer.org/installer | php --
    php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application path/to/install
 
-Alternately, clone the repository and manually invoke ``composer`` using the shipped
-``composer.phar``:
+Como alternativa, clonar o repositório e mnualmente chamar o ``composer`` usando o arquivo composer.phar
+incluído no repositório:
 
 .. code-block:: text
    :linenos:
@@ -31,11 +30,10 @@ Alternately, clone the repository and manually invoke ``composer`` using the shi
    php composer.phar self-update
    php composer.phar install
 
-(The ``self-update`` directive is to ensure you have an up-to-date ``composer.phar``
-available.)
+(A instrução ``self-update`` é usada para garantir que você tenha um arquivo ``composer.phar``
+atualizado.)
 
-Another alternative for downloading the project is to grab it via `curl`, and
-then pass it to `tar`:
+Outra alternativa para fazer o download do projeto e baixa-lo com `curl`, e descompacta-lo com `tar`:
 
 .. code-block:: text
    :linenos:
@@ -43,46 +41,44 @@ then pass it to `tar`:
    cd my/project/dir
    curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
 
-You would then invoke ``composer`` to install dependencies per the previous
-example.
+Você então deverá chamar o ``composer`` para instalar as dependencias assim como no exemplo anterior.
 
 .. _installation.git.submodules:
 
-Using Git submodules
---------------------
-Alternatively, you can install using native git submodules:
+Usando Git submodules
+---------------------
+Alternativamente, você pode instalar usando a ferramenta nativa git submodules:
 
 .. code-block:: text
    :linenos:
 
    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
 
-Web Server Setup
-----------------
+Confĩgurações de Servidor Web
+-----------------------------
 
-PHP CLI Server
-^^^^^^^^^^^^^^
+Servidor PHP CLI
+^^^^^^^^^^^^^^^^
 
-The simplest way to get started if you are using PHP 5.4 or above is to start the
-internal PHP cli-server in the root directory:
+O jeito mais simples de começar se você estiver usando PHP 5.4 ou superior é iniciar
+o servidor interno do PHP no diretório raiz:
 
 .. code-block:: text
    :linenos:
 
    php -S 0.0.0.0:8080 -t public/ public/index.php
 
-This will start the cli-server on port 8080, and bind it to all network
-interfaces.
+Dessa forma você irá iniciar o servidor cli na porta 8080 e fixar ele em todas as interfaces de rede.
 
 .. note::
 
-   The built-in CLI server is *for development only*.
+   O servidor embiutido do PHP deve ser usado *apenas para desenvolvimento*.
 
-Apache Setup
-^^^^^^^^^^^^
+Configurando o Apache
+^^^^^^^^^^^^^^^^^^^^^
 
-To use Apache, setup a virtual host to point to the ``public/`` directory of the
-project. It should look something like below:
+Para usar o apache, configure um servidor virtual apontando para o diretório ``public/`` do projeto.
+Ele deve se parecer com o seguinte:
 
 .. code-block:: text
    :linenos:
@@ -98,7 +94,7 @@ project. It should look something like below:
       </Directory>
    </VirtualHost>
 
-or, if you are using Apache 2.4 or above:
+ou se você estiver usando Apache 2.4 ou superior:
 
 .. code-block:: text
    :linenos:
@@ -115,18 +111,18 @@ or, if you are using Apache 2.4 or above:
 
 .. _installation.rewrite.configuration:
 
-Rewrite Configuration
-,,,,,,,,,,,,,,,,,,,,,
+Configuração de Reescrita
+,,,,,,,,,,,,,,,,,,,,,,,,,
 
-*URL* rewriting is a common function of *HTTP* servers, and allows all HTTP requests to be routed through
-the ``index.php`` entry point of a Zend Framework Application.
+Reescrita de *URL* é uma função comum nos servidores *HTTP*, e possibilita que todas as requisições HTTP sejam roteadas
+atravez do ponto de entrada ``index.php`` de uma aplicação Zend Framework.
 
-Apache comes bundled with the  module``mod_rewrite`` for URL rewriting. To use it, ``mod_rewrite`` must
-either be included at compile time or enabled as a Dynamic Shared Object (*DSO*). Please consult the
-`Apache documentation`_ for your version for more information.
+O apache vem integrado com um modulo chamado ``mod_rewrite`` para reescrita de URL. Para usa-lo, ``mod_rewrite`` precisa
+ou ser incluído em tempo de compilação ou ser habilitado como um Dynamic Shared Object (*DSO*). Por favor consulte a
+`Documentação do Apache`_ da sua versão para mais informações.
 
-The Zend Framework Skeleton Application comes with a ``.htaccess`` that includes rewrite rules to cover
-most use cases:
+A aplicação esqueleto do Zend Framework inclui um arquivo ``.htaccess`` com as regras de reescrita que irão cobrir a
+maioria dos casos de uso:
 
 .. code-block:: text
    :linenos:
@@ -153,8 +149,8 @@ most use cases:
 Microsoft Internet Information Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of version 7.0, *IIS* ships with a standard rewrite engine. You may use the following configuration to
-create the appropriate rewrite rules.
+A partir da versão 7.0, *IIS* vem com um motor de reescrita padrão. Você pode usar a seguinte configuração para
+criar as regras apropriadas de reescrita.
 
 .. code-block:: xml
    :linenos:
@@ -186,4 +182,4 @@ create the appropriate rewrite rules.
        </system.webServer>
    </configuration>
 
-.. _`Apache documentation`: http://httpd.apache.org/docs/
+.. _`Documentação do Apache`: http://httpd.apache.org/docs/
