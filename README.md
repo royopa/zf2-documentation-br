@@ -1,26 +1,25 @@
-# Bem vindo a documentação do Zend Framework 2 em Portugûes
+# Bem vindo a documentação do Zend Framework 2 em Português
 
-Essa documentação é baseada na documentação original em ingçês disponível em:
+Essa documentação é baseada na documentação original em inglês disponível em:
 https://github.com/zendframework/zf2-documentation
 
 
 ## Veja a Documentação Online
 
-Nos usamos o [readthedocs.org](http://readthedocs.org/) para renderizar online
+Nós usamos o [readthedocs.org](http://readthedocs.org/) para renderizar online
 a versão de desenvolvimento da tradução da documentação do Zend Framework 2.
 
-Você pode ler a dicumentação em  
-[http://zf2-documentation-br.readthedocs.org](http://zf2-documentation-br.readthedocs.org/pt/latest/).
+Você pode ler a documentação em  [http://zf2-documentation-br.readthedocs.org](http://zf2-documentation-br.readthedocs.org/pt/latest/).
 
 ## Informações de Compilação
 
 Para compilar a documentação é necessário ter o [Sphinx](http://sphinx-doc.org/). 
-Tambem são necessárias as bibliotecas _Pygments_, _docutils_ and _markupsafe_, 
+Também são necessárias as bibliotecas _Pygments_, _docutils_ and _markupsafe_, 
 que podem ser instaladas com `pip install`.
 
-Acesse o diretório `docs/`, e execute `make` com um dos seguintes parametros:
+Acesse o diretório `docs/`, e execute `make` com um dos seguintes parâmetros:
 
-- `epub` - build epub (ebook) documentation (requires
+- `epub` - build epub (ebook) documentation (required)
   [Calibre](http://calibre-ebook.com/) to build cross-platform epub versions)
 - `help` - build Windows help files
 - `html` - build HTML documentation
@@ -35,7 +34,7 @@ Exemplo:
 make html
 ```
 
-Nota: No momento somente a versão em HTML é suportada, porem existem planos para
+Nota: No momento somente a versão em HTML é suportada, porém existem planos para
 suportar outros formatos
 
 Você pode realizar a limpeza com `make clean`.
@@ -48,9 +47,9 @@ leia o arquivo CONTRIBUTING.md.
 Se você não sabe por onde começar, ou onde sua ajuda será melhor aproveitada, por
 favor leia o arquivo TODO.md.
 
-## Licensa
+## Licença
 
-Os arquivos nesse repostório estão licenciados sobre a "Zend Framework License".
+Os arquivos nesse repositório estão licenciados sobre a "Zend Framework License".
 Uma cópia dessa licença pode ser encontrada em LICENSE.txt.
 
 ## Agradecimentos
