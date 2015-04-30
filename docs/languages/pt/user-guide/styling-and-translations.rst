@@ -4,23 +4,23 @@
 Estilizando e Traduzindo
 ========================
 
-Nos usamos inicialmente o estilo da Aplicação Skeleton, e não existe nenhum problema quanto
-a isso, porem nos queremos mudar o título e remoer a mensagem de licenciamento. 
+Nós usamos inicialmente o estilo da Aplicação Skeleton, e não existe nenhum problema quanto
+a isso, porém nós queremos mudar o título e remover a mensagem de licença.
 
 A Aplicação Skeleton está configurada para utilizar as funcionalidades de tradução de ``Zend\I18n``
 para todos os textos. Para isso são usados arquivos ``.po`` armazenados em ``Application/language``,
-e por isso nos precisamos usar `poedit <http://www.poedit.net/download.php>`_ para alterar esse texto.
+e por isso nós precisamos usar `poedit <http://www.poedit.net/download.php>`_ para alterar esse texto.
 Inicie o poedit e abra o arquivo ``application/language/en_US.po``. Clique em “Skeleton Application”
 na lista ``Original string`` e então digite “Tutorial” como uma tradução.
 
 .. image:: ../images/user-guide.styling-and-translations.poedit.png
 
-Clique em ``Save`` na barra de ferramentas para que o poedit crie um arquivo ``en_US.mo`` para nos.  
+Clique em ``Save`` na barra de ferramentas para que o poedit crie um arquivo ``en_US.mo`` para nós.  
 Se você achar que nenhum arquivo ``.mo`` foi gerado, verifique em ``Preferences -> Editor -> Behavior`` 
 se o checkbox ``Automatically compile .mo file on save`` está marcado.
 
-Para remover a mensagem de licenciamento nos precisamos editar o arquivo ``layout.phtml`` no
-modulo ``Application``:
+Para remover a mensagem de licenciamento nós precisamos editar o arquivo ``layout.phtml`` no
+módulo ``Application``:
 
 .. code-block:: php
 
