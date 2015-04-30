@@ -12,7 +12,7 @@
 
 .. |InDepthTutorial| replace:: Tutorial Aprofundado para Iniciantes.
 
-.. |InDepthTutorialIntroduction| replace:: Nesse tutorial nos criaremos uma Blog-Application do zero. Vamos passar
+.. |InDepthTutorialIntroduction| replace:: Nesse tutorial nós criaremos uma Aplicação de Blog do zero. Vamos passar
    por todos os detalhes que você precisa para aprender a criar sua própria aplicação com ZF2.
 
 .. |GettingStartedWithZendStudio| replace:: Iniciando com Zend Studio 10 e Zend Server 6
