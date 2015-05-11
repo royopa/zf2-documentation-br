@@ -1,21 +1,21 @@
 .. EN-Revision: 96c6ad3
 .. _user-guide.database-and-models:
 
-Bando de Dados e Models
+Banco de Dados e Models
 =======================
 
 O Banco de Dados
 ----------------
 
-Agora que nos temos o módulo ``Album`` configurado com controllers, ações e
+Agora que nós temos o módulo ``Album`` configurado com controllers, ações e
 views, está na hora de olhar para a seção de models de nossa aplicação.
-Lembre-se que os models são a parte que lida com o proposito pricipal de
+Lembre-se que os models são a parte que lida com o propósito principal de
 uma aplicação (também chamado de "regras de negócio") e, em nosso caso, lida
-com o banco de dados. Nos iremos usar a classe ``Zend\Db\TableGateway\TableGateway``
+com o banco de dados. Nós iremos usar a classe ``Zend\Db\TableGateway\TableGateway``
 do Zend Framework que serve para procurar, inserir, atualizar e deletar linhas 
-dobanco de dados.
+do banco de dados.
 
-Também vamos usar MySQL, atraves do driver PDO do PHP, portanto crie um banco de dados
+Também vamos usar MySQL, através do driver PDO do PHP, portanto crie um banco de dados
 com o nome de ``zf2tutorial``, e rode as seguintes instruções SQL para criar a tabela
 de albuns com alguns dados nela.
 
@@ -41,7 +41,7 @@ de albuns com alguns dados nela.
 (Os dados de teste escolhidos são os mais vendidos na Amazon UK no momento que esse 
 tutorial foi escrito em sua versão original)
 
-Nos temos alguns dados em um banco de dados e podemos escrever um model bastante simples
+Nós temos alguns dados em um banco de dados e podemos escrever um model bastante simples
 para eles.
 
 Os Arquivos de Models
@@ -55,9 +55,9 @@ aplicação e então usar objetos mapeadores que carregam e salvam essas entidad
 banco de dados. Outro abordagem pode ser utilizar um Object-relational mapping (ORM),
 como Doctrine ou Propel.
 
-Para esse tutorial nos vamos criar um model basnte simples atraves da criação de uma classe
+Para esse tutorial nós criaremos um model bastante simples através da criação de uma classe
 ``AlbumTable`` que usa a classe ``Zend\Db\TableGateway\TableGateway`` na qual cada um dos
-albuns será um Objeto ``Album`` (conhecido com *entity*). Essa é a implementação do modelo
+álbuns será um Objeto ``Album`` (conhecido com *entity*). Essa é a implementação do modelo
 padrão Table Data Gateway que permite interação com os dados contidos na tabela do banco de
 dados. Esteja ciente de que esse modelo Table Data Gateway pode se tornar limitado em 
 sistemas maiores. Também existe uma tentação por colocar o acesso ao banco de dados
