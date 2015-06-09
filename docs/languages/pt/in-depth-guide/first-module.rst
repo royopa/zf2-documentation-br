@@ -1,23 +1,22 @@
 .. _in-depth-guide.first-module:
 
-Introducing our first "Blog" Module
-===================================
+Iniciando nosso primeiro Modulo "Blog"
+======================================
 
-Now that we know about the basics of the Zend Framework 2 Skeleton Application, let's continue and create our very own
-module. We will create a module named "Blog". This module will display a list of database entries that represent a
-single blog post. Each post will have three properties: ``id``, ``text`` and ``title``. We will create
-forms to enter new posts into our database and to edit existing posts. Furthermore we will do so by using
-best-practices throughout the whole QuickStart.
+Agora que você sabe o básico de uma aplicação esqueleto com Zend Framework 2, vamos continuar e criar nosso próprio
+modulo. No vamosr criar um modulo chamado "Blog". Esse modulo irá mostrar uma lista de entradas no banco de dados que
+representam um único artigo no blog. Cada artigo terá três propriedades: ``id``, ``text`` e ``title``. Nos vamos criar
+formulários para cadastrar novos artigos no nosso banco de dados e editar os artigos existentes. Além disso nos vamos
+fazer isso usando melhores práticas por todo o guia.
 
+Escrevendo um novo Modulo
+=========================
 
-Writing a new Module
-====================
+Vamos começar criando um novo diretório na pasta ``/module`` chamado ``Blog``.
 
-Let's start by creating a new folder under the ``/module`` directory called ``Blog``.
-
-To be recognized as a module by the :ref:`ModuleManager <zend.module-manager-intro>`
-all we need to do is create a PHP class named ``Module`` under our module's namespace, which is ``Blog``. Create the
-file ``/module/Blog/Module.php``
+Para ser reconhecido como Modulo pelo :ref:`ModuleManager <zend.module-manager-intro>`
+tudo que precisamos fazer é criar uma classe PHP chamada ``Module`` dentro do nosso namespace do modulo, que é ``Blog``.
+Então crie o arquivo ``/module/Blog/Module.php``
 
 .. code-block:: php
    :linenos:
@@ -30,10 +29,10 @@ file ``/module/Blog/Module.php``
     {
     }
 
-We now have a module that can be detected by ZF2s :ref:`ModuleManager <zend.module-manager-intro>`.
-Let's add this module to our application. Although our module doesn't do anything yet, just having the ``Module.php``
-class allows it to be loaded by ZF2s :ref:`ModuleManager <zend.module-manager-intro>`.
-To do this, add an entry for ``Blog`` to the modules array inside the main application config file at
+Agora nos temos um modulo que pode ser detectado pelo :ref:`ModuleManager <zend.module-manager-intro>` do ZF2.
+Vamos adcionar esse modulo a nossa aplicação. Mesmo que nosso modulo ainda não faça nada, tendo somente a classe
+``Module.php`` permite que esse seja carregado pelo :ref:`ModuleManager <zend.module-manager-intro>` do ZF2.
+Para fazer isso, inclua uma entrada para ``Blog`` no array de modulos dentro do arquivo principal de configuração em
 ``/config/application.config.php``:
 
 .. code-block:: php
@@ -51,27 +50,26 @@ To do this, add an entry for ``Blog`` to the modules array inside the main appli
         // ...
     );
 
-If you refresh your application you should see no change at all (but also no errors).
+Se você recarregar sua aplicação você não deve ver nenhuma mudança (mas também nenhum erro).
 
-At this point it's worth taking a step back to discuss what modules are for. In short, a module is an encapsulated
-set of features for your application. A module might add features to the application that you can see, like our
-Blog module; or it might provide background functionality for other modules in the application to use, such as
-interacting with a third party API.
+Nesse ponto é valido dar um passo atras para discutir para que servem os modulos. Em resumo, um modulo é um conjunto
+de funcionalidades encapsuladas da sua aplicação. Um modulo pode incluir funcionalidades na aplicação que você pode ver
+como o modulo de Blog; ou pode prover funcionalidades de segundo plano para outros modulos da aplicação usarem, como
+interagir com uma API de terceiros.
 
-Organizing your code into modules makes it easier for you to reuse functionality in other application, or to use
-modules written by the community.
+Organizando seu código em modulos torna mais fácil a reutilização de funcionalidades em outras aplicações, ou o uso de
+módulos escritos pela comunidade.
 
-Configuring the Module
-======================
+Configurando o Modulo
+=====================
 
-The next thing we're going to do is add a route to our application so that our module can be accessed through the
-URL ``localhost:8080/blog``. We do this by adding router configuration to our module, but first we need to let the
-``ModuleManager`` know that our module has configuration that it needs to load.
+A próxima coisa que iremos fazer é adicionar uma rota na nossa aplicação para que nosso módulo possa ser acessado
+pela URL ``localhost:8080/blog``. Nos fazemos isso adicionando as configurações de roteamento no nosso modulo, mas
+antes nos precisamos deixar o ``ModuleManager`` saber que nosso modulo tem configurações que precisam ser carregadas.
 
-This is done by adding a ``getConfig()`` function to the ``Module`` class that returns the configuration. (This function is
-defined in the ``ConfigProviderInterface`` although actually implementing this interface in the module class is optional.)
-This function should return either an ``array`` or a ``Traversable`` object. Continue by editing your
-``/module/Blog/Module.php``:
+Para isso precisamos adicionar um método ``getConfig()`` na classe ``Module`` que retorna a configuração. (Esse método é
+definido na ``ConfigProviderInterface`` entretanto implementar essa interface de fato no modulo é opcional).
+Esse método deve retirnar um ``array`` ou um objeto ``Traversable``. Continue editando seu ``/module/Blog/Module.php``:
 
 .. code-block:: php
    :linenos:
@@ -91,9 +89,10 @@ This function should return either an ``array`` or a ``Traversable`` object. Con
         }
     }
 
-With this our Module is now able to be configured. Configuration files can become quite big though and keeping
-everything inside the ``getConfig()`` function won't be optimal. To help keep our project organized we're going to put
-our array configuration in a separate file. Go ahead and create this file at ``/module/Blog/config/module.config.php``:
+Com isso nosso modelo está agora apto a ser configurado. Arquivos de configuração podem se tornar muito grandes e manter
+tudo dentro do método ``getConfig()`` não seria recomendado. Para ajudar a manter nosso projeto organizado nos vamos
+colocar nosso array de configuração em um arquivo separado. Siga em frente e crie esse arquivo em
+``/module/Blog/config/module.config.php``:
 
 .. code-block:: php
    :linenos:
@@ -102,8 +101,8 @@ our array configuration in a separate file. Go ahead and create this file at ``/
     // Filename: /module/Blog/config/module.config.php
     return array();
 
-Now we will rewrite the ``getConfig()`` function to include this newly created file instead of directly returning the
-array.
+Agora nos vamos reescrever o mmétodo ``getConfig()`` para incluir nosso mais recente arquivo ao inves de retornar
+diretamente o array.
 
 .. code-block:: php
    :linenos:
@@ -123,8 +122,8 @@ array.
         }
     }
 
-Reload your application and you'll see that everything remains as it was. Next we add the new route to our
-configuration file:
+Recarregue sua aplicação e você verá que tudo permanece como estava. Em seguida nos vamos adicionar a nova rota ao nosso
+arquivo de configuração:
 
 .. code-block:: php
    :linenos:
@@ -156,9 +155,9 @@ configuration file:
         )
     );
 
-We've now created a route called ``blog`` that listens to the URL ``localhost:8080/blog``. Whenever someone accesses this
-route, the ``indexAction()`` function of the class ``Blog\Controller\List`` will be executed. However, this controller
-does not exist yet, so if you reload the page you will see this error message:
+Nos criamos agora uma rota chamada ``blog`` que escuta a URL ``localhost:8080/blog``. Sempre que alguem acessar essa
+rota, o método ``indexAction()`` da classe ``Blog\Controller\List`` será executado. Entretanto, esse controller ainda
+não existe, então se você recarregar a página irá ver a seguinte mensagem de erro:
 
 .. code-block:: html
    :linenos:
@@ -171,8 +170,9 @@ does not exist yet, so if you reload the page you will see this error message:
     Blog\Controller\List(resolves to invalid controller class or alias: Blog\Controller\List)
     No Exception available
 
-We now need to tell our module where to find this controller named ``Blog\Controller\List``. To achieve this we have
-to add this key to the ``controllers`` configuration key inside your ``/module/Blog/config/module.config.php``.
+Nos agora precisamos dizer ao nosso modulo onde encontrar  o controller com nome ``Blog\Controller\List``. Para
+conseguir isso nos temos que adicionar uma chave a configuração ``controllers`` dentro do arquivo
+``/module/Blog/config/module.config.php``.
 
 .. code-block:: php
    :linenos:
@@ -189,19 +189,20 @@ to add this key to the ``controllers`` configuration key inside your ``/module/B
         'router' => array( /** Route Configuration */ )
     );
 
-This configuration defines ``Blog\Controller\List`` as an alias for the ``ListController`` under the namespace
-``Blog\Controller``. Reloading the page should then give you:
+Essa configuração define que ``Blog\Controller\List`` é um apelido para ``ListController`` dentro do namespace
+``Blog\Controller``. Recarregando a página deve então mostrar a você:
 
 .. code-block:: html
    :linenos:
 
     ( ! ) Fatal error: Class 'Blog\Controller\ListController' not found in {libPath}/Zend/ServiceManager/AbstractPluginManager.php on line {lineNumber}
 
-This error tells us that the application knows what class to load, but not where to find it. To fix this, we need to
-configure `autoloading <http://www.php.net/manual/en/language.oop5.autoload.php>`_ for our Module. Autoloading is a
-process to allow PHP to automatically load classes on demand. For our Module we set this up by adding a
-``getAutoloaderConfig()`` function to our Module class. (This function is defined in the `AutoloaderProviderInterface <https://github.com/zendframework/zf2/:current_branch/library/Zend/ModuleManager/Feature/AutoloaderProviderInterface.php>`_,
-although the presence of the function is enough, actually implementing the interface is optional.)
+Esse erro nos diz que a aplicação sabe qual classe carregar, mas não sabe onde encontra-la. Para corrigir isso, nos
+vamos precisar configurar o `autoloading <http://www.php.net/manual/en/language.oop5.autoload.php>`_ do nosso modulo.
+Autoloading é o processo de deixar o PHP automaticamente carregar as classes por demanda. Para nosso modulo nos
+configuramos isso ao adicionar um método ``getAutoloaderConfig()`` na nossa classe Module. (Essa função é definida
+na `AutoloaderProviderInterface <https://github.com/zendframework/zf2/:current_branch/library/Zend/ModuleManager/Feature/AutoloaderProviderInterface.php>`_,
+entretanto somente a presença do método é suficiente, implementar a interface de fato é opcional).
 
 .. code-block:: php
    :linenos:
@@ -246,17 +247,18 @@ although the presence of the function is enough, actually implementing the inter
         }
     }
 
-Now this looks like a lot of change but don't be afraid. We've added an ``getAutoloaderConfig()`` function which provides
-configuration for the ``Zend\Loader\StandardAutoloader``. This configuration tells the application that classes
-in ``__NAMESPACE__`` (``Blog``) can be found inside ``__DIR__ . '/src/' . __NAMESPACE__`` (``/module/Blog/src/Blog``).
+Agora isso parece muitas mudanças mas não se assuste. Nos adicionamos o método ``getAutoloaderConfig()`` que contem
+configurações para o  ``Zend\Loader\StandardAutoloader``. Essas configuraes informam a aplicação que classes
+no ``__NAMESPACE__`` (``Blog``) podem ser encontradas dentrdo de ``__DIR__ . '/src/' . __NAMESPACE__``
+(``/module/Blog/src/Blog``).
 
-The ``Zend\Loader\StandardAutoloader`` uses a PHP community driven standard called `PSR-0` <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md>`_.
-Amongst other things, this standard defines a way for PHP to map class names to the file system. So with this
-configured, the application knows that our ``Blog\Controller\ListController`` class should exist at
+O ``Zend\Loader\StandardAutoloader`` usa um padrão desenvolivido pela comunidade chamado de `PSR-0` <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md>`_.
+Entre outras coisas, esse padrão define uma forma para o PHP mapear os nomes de classes com o sistema de arquivos.
+Então com isso configurado, a aplicação sabe que nossa classe ``Blog\Controller\ListController`` deve existir em
 ``/module/Blog/src/Blog/Controller/ListController.php``.
 
-If you refresh the browser now you'll see the same error, as even though we've configured the autoloader, we still need
-to create the controller class. Let's create this file now:
+Se você atualizar o navegador agora você verá o mesmo erro, já que mesmo que nos tenhamos configurado o autoloader, nos
+ainda precisamos criar a classe controller. Então vamos criar esse arquivo agora:
 
 .. code-block:: php
    :linenos:
@@ -269,7 +271,7 @@ to create the controller class. Let's create this file now:
     {
     }
 
-Reloading the page now will finally result into a new screen. The new error message looks like this:
+Recarregando a página ira finalmente resultar em uma nova tela. A nova mensagem de erro se parece com isso:
 
 .. code-block:: html
    :linenos:
@@ -289,10 +291,10 @@ Reloading the page now will finally result into a new screen. The new error mess
     Message:
     Controller of type Blog\Controller\ListController is invalid; must implement Zend\Stdlib\DispatchableInterface
 
-This happens because our controller must implement `Zend\Stdlib\DispatchableInterface <https://github.com/zendframework/zf2/:current_branch/library/Zend/Stdlib/DispatchableInterface.php>`_ in order to be 'dispatched'
-(or run) by ZendFramework's MVC layer. ZendFramework provides some base controller implementation of it with
-`AbstractActionController <https://github.com/zendframework/zf2/:current_branch/library/Zend/Mvc/Controller/AbstractActionController.php>`_,
-which we are going to use. Let's modify our controller now:
+Isso acontece por que nosso controller precisa implementar `Zend\Stdlib\DispatchableInterface <https://github.com/zendframework/zf2/:current_branch/library/Zend/Stdlib/DispatchableInterface.php>`_
+para que possa ser 'dispatched' (ou executada) pela camada MVC do by ZendFramework. O ZendFramework fornece algumas
+implementações básicas de controllers como `AbstractActionController <https://github.com/zendframework/zf2/:current_branch/library/Zend/Mvc/Controller/AbstractActionController.php>`_,
+que nos iremos usar. Vamos então modificar nosso controller agora:
 
 .. code-block:: php
    :linenos:
@@ -308,7 +310,7 @@ which we are going to use. Let's modify our controller now:
     {
     }
 
-It's now time for another refresh of the site. You should now see a new error message:
+Chegou a hora de um novo recarregamento do site. Você deve ver uma nova mensagem de erro:
 
 .. code-block:: html
    :linenos:
@@ -324,9 +326,9 @@ It's now time for another refresh of the site. You should now see a new error me
     Message:
     Zend\View\Renderer\PhpRenderer::render: Unable to render template "blog/list/index"; resolver could not resolve to a file
 
-Now the application tells you that a view template-file can not be rendered, which is to be expected as we've not
-created it yet. The application is expecting it to be at ``/module/Blog/view/blog/list/index.phtml``. Create this
-file and add some dummy content to it:
+Agora a aplicação informa que um arquivo de view não pode ser renderizado, o que é esperado já que nos não criamos um
+ainda. A aplicação espera que ele esteja em``/module/Blog/view/blog/list/index.phtml``. Crie esse artigo e adicione
+algum conteúdo aleatório a ele:
 
 .. code-block:: html
    :linenos:
@@ -334,15 +336,17 @@ file and add some dummy content to it:
     <!-- Filename: /module/Blog/view/blog/list/index.phtml -->
     <h1>Blog\ListController::indexAction()</h1>
 
-Before we continue let us quickly take a look at where we placed this file. Note that view files are found within the
-``/view`` subdirectory, not ``/src`` as they are not PHP class files, but template files for rendering HTML. The
-following path however deserves some explanation but it's very simple. First we have the lowercased namespace. Followed
-by the lowercased controller name without the appendix 'controller' and lastly comes the name of the action that we are
-accessing, again without the appendix 'action'. All in all it looks like this: ``/view/{namespace}/{controller}/{action}.phtml``.
-This has become a community standard but can potentionally be changed by you at any time.
+Antes de continuarmos vamos rapidamente olhar onde nos colocamos esse arquivo. Note que os arquivos de view são
+encontrados dentro do subdiretório ``/view`` não ``/src`` já que eles não são arquivos de classes em PHP, mas sim
+arquivos de templates para renderizar HTML. o caminho seguinte entretanto merece algumas explicações mas é muito simples.
+Primeiro nos temos o namespace em minusculas. Seguido pelo nome do controller também em minusculas e sem o sufixo
+'controller' e por último temos o nome da action que estamos acessando, novamente sem o sufixo 'action'. Tudo isso
+se parrce com isso: ``/view/{namespace}/{controller}/{action}.phtml``. Isso se tornou um padrão da comunidade, mas
+pode ser alterado por você a qualquer momento.
 
-However creating this file alone is not enough and this brings as to the final topic of this part of the QuickStart. We
-need to let the application know where to look for view files. We do this within our modules configuration file ``module.config.php``.
+Entretanto criando somente esse arquivo não é o suficiente e isso nos leva ao último tópico dessa parte do Guia. Nos
+precisamos deixar a aplicação saber onde procurar pelos arquivos de view. Nos fazemos isso dentro do arquivo de
+configuração do nosso modulo ``module.config.php``.
 
 .. code-block:: php
    :linenos:
@@ -360,11 +364,11 @@ need to let the application know where to look for view files. We do this within
         'router'      => array( /** Route Configuration */ )
     );
 
-The above configuration tells the application that the folder ``/module/Blog/view`` has view files in it that match the
-above described default scheme. It is important to note that with this you can not only ship view files for your module
-but you can also overwrite view files from other modules.
+A configuração acima informa a aplicação que a pasta ``/module/Blog/view`` possui arquivos de view que se adequam ao
+esquema padrão apresentado acima. É importante notas que com isso você pode não somente criar arquivos de views para
+seus modulos como também sobreescrever os arquivos de views de outros módulos.
 
-Reload your site now. Finally we are at a point where we see something different than an error being displayed.
-Congratulations, not only have you created a simple "Hello World" style module, you also learned about many error
-messages and their causes. If we didn't exhaust you too much, continue with our QuickStart and let's create a module
-that actually does something.
+Recarregue o site agora. Finalmente nos estamos em um ponto onde você pode ver algi diferente de uma mensagem de erro
+sendo exibida. Parabens, você não somente acabou de criar um simples modulo no estilo "Hello World" como também
+aprendeu sobre muitas mensagens de erros e suas causas. Se você não está exausto, continue com o Guia e vamos criar
+um módulo que de fato faça alguma coisa.
